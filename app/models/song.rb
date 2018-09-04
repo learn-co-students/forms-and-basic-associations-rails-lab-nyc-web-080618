@@ -4,6 +4,15 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   belongs_to :genre
 
+  def song_artist_name
+    self.artist ? self.artist.name : nil
+  end
+
+  def song_artist_name=(name)
+    self.artist = Artist.find_or_create_by(name: name)
+    # self.artist = artist
+  end
+
   def note_contents=(notes)
     notes.each do |content|
       if content != ""
