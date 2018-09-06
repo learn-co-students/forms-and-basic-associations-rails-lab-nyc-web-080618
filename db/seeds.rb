@@ -159,4 +159,10 @@ genres = Hash[[
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
+beyonce = Artist.create!(name: "Beyonce")
+beyonce.songs.create!(title: "10 Ways You Are Already Awesome")
+beyonce.songs.create!(title: "This Yoga Stretch Cures Procrastination, Maybe")
+beyonce.songs.create!(title: "The Power of Positive Thinking and 100 Gallons of Coffee")
 
+kanye = Artist.create!(name: "Kanye")
+kanye.songs.create!(title: "Top 20 Summer Blockbusters Featuring a Cute Dog")
